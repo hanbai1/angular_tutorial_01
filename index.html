@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>index.html</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" charset="utf-8">
+  <link rel="stylesheet" href="css/index.css" charset="utf-8">
+</head>
+
+<body ng-app="App">
+
+  <!-- <div class="container" ng-controller="MainController">
+  </div> -->
+  <div class="container">
+
+    <hr>
+
+    <h1><a href="http://lab.hisasann.com/AngularJSTutorial/" target="_blank">Tutorial Link</a></h1>
+
+    <hr>
+
+    <h1>1.ng-model</h1>
+    <input type="text" ng-model="name" placeholder="Enter Your Name" size="50">
+    <p>{{name}}</p>
+
+    <hr>
+
+    <h1>2.ng-controller</h1>
+    <div ng-controller="controller1">
+
+      <p>メンバーの人数は{{users.length}}人</p>
+      <ul ng-repeat="user in users">
+        <li>Name:{{user.name}} Score:{{user.score}}</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <h1>3.filter(scoreでソート & 上限2つまで)</h1>
+    <div ng-controller="controller1">
+
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Score</td>
+        </tr>
+        <tr ng-repeat="user in users|limitTo:2|orderBy:'-score'">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.score}}</td>
+        </tr>
+      </table>
+
+    </div>
+    <h1>4.filter(文字列で操作)</h1>
+    <div ng-controller="controller1">
+
+      <input type="text" ng-model="query.name">
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Score</td>
+        </tr>
+        <tr ng-repeat="user in users|filter:query:strict">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.score}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="js/angular.min.js" charset="utf-8"></script>
+  <script src="js/index.js" charset="utf-8"></script>
+</body>
+
+</html>

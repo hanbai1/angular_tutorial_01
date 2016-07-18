@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body {
+  font-family:Hiragino Kaku Gothic Pro","Yu Gothic","Meiryo",sans-serif;
+}
+ul,li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
