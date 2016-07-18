@@ -8,3 +8,10 @@ ul,li {
   padding: 0;
   margin: 0;
 }
+.even {
+  background: skyblue;
+}
+.odd {
+  background: tomato;
+  color:#fff;
+}

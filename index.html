@@ -21,7 +21,7 @@
     <hr>
 
     <h1>1.ng-model</h1>
-    <input type="text" ng-model="name" placeholder="Enter Your Name" size="50">
+    <input type="text" class="form-control" ng-model="name" placeholder="Enter Your Name" size="50">
     <p>{{name}}</p>
 
     <hr>
@@ -37,7 +37,7 @@
 
     <hr>
 
-    <h1>3.filter(scoreでソート & 上限2つまで)</h1>
+    <h1>3.filter(scoreでソート & 下位2人まで)</h1>
     <div ng-controller="controller1">
 
       <table class="table">
@@ -54,10 +54,13 @@
       </table>
 
     </div>
+
+    <hr>
+
     <h1>4.filter(文字列で操作)</h1>
     <div ng-controller="controller1">
 
-      <input type="text" ng-model="query.name">
+      <input type="text" class="form-control" ng-model="query.name" placeholder="Enter Name">
       <table class="table">
         <tr>
           <th>#</th>
@@ -72,9 +75,60 @@
       </table>
     </div>
 
-  </div>
+    <hr>
 
+    <h1>5.ng-class-even,odd</h1>
+
+    <div ng-controller="controller1">
+
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Score</td>
+        </tr>
+        <tr ng-repeat="user in users">
+          <td ng-class-even="'even'" ng-class-odd="'odd'">{{user.id}}</td>
+          <td ng-class-even="'even'" ng-class-odd="'odd'">{{user.name}}</td>
+          <td ng-class-even="'even'" ng-class-odd="'odd'">{{user.score}}</td>
+        </tr>
+      </table>
+
+    </div>
+
+    <hr>
+
+    <h1>6.コントローラーの入れ子</h1>
+
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Basic Modals
+    </button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">タイトル</h4>
+                </div>
+                <div class="modal-body">
+                    モーダルのbody部分
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+  <!-- containerの終わり -->
   <script src="js/angular.min.js" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js" charset="utf-8"></script>
   <script src="js/index.js" charset="utf-8"></script>
 </body>
 
